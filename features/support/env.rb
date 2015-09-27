@@ -10,7 +10,8 @@ Before do | scenario |
       platformName: "#{ENV['platformName']}",
       deviceOrientation: 'portrait',
       app: 'sauce-storage:TestApp-iphoneos.app.zip',
-      name: "#{scenario.feature.name} - #{scenario.name}"
+      name: "#{scenario.feature.name} - #{scenario.name}",
+      appiumVersion: '1.4.11'
     }
   }
 
