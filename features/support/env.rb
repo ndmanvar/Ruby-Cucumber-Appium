@@ -8,9 +8,10 @@ Before do | scenario |
       platformVersion: "#{ENV['platformVersion']}",
       deviceName: "#{ENV['deviceName']}",
       platformName: "#{ENV['platformName']}",
+      app: "#{ENV['app']}",
       deviceOrientation: 'portrait',
-      app: 'https://s3.amazonaws.com/appium/TestApp-iphoneos.app.zip',
-      name: "#{scenario.feature.name} - #{scenario.name}"
+      name: "#{scenario.feature.name} - #{scenario.name}",
+      appiumVersion: '1.4.11'
     }
   }
 
