@@ -9,7 +9,7 @@ Before do | scenario |
       deviceName: "#{ENV['deviceName']}",
       platformName: "#{ENV['platformName']}",
       deviceOrientation: 'portrait',
-      app: 'sauce-storage:TestApp-iphoneos.app.zip',
+      app: 'https://s3.amazonaws.com/appium/TestApp-iphoneos.app.zip',
       name: "#{scenario.feature.name} - #{scenario.name}"
     }
   }
