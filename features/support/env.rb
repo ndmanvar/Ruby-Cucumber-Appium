@@ -21,10 +21,12 @@ end
 
 # "after all"
 After do | scenario |
-  @driver.driver_quit
-
   sessionid =  @driver.session_id
+  jobname = "#{scenario.feature.name} - #{scenario.name}"
+  puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
 
+  @driver.driver_quit
+  
   if scenario.passed?
     SauceWhisk::Jobs.pass_job sessionid
   else
