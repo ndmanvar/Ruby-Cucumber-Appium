@@ -13,5 +13,4 @@ end
 Then /^the sum should equal "(.*)"$/ do | text |
 	sum = @driver.find_element(:class_name, "UIAStaticText").text();
 	expect(sum).to eq(text)
-    
 end
