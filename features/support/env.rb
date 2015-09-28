@@ -1,5 +1,6 @@
 require 'appium_lib'
 require 'sauce_whisk'
+require 'rspec'
 
 Before do | scenario |
   # need to configure env variables for browser
