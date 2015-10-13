@@ -5,3 +5,4 @@ Feature: Sample Real Device Test
    	And I enter "8" into text field with class name "UIATextField"
    	When I click the button with the accessibility id "ComputeSumButton"
    	Then the sum should equal "20"
+

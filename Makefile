@@ -2,6 +2,7 @@ JUNIT_DIR?=junit_reports
 FEATURES_DIR?=features
 
 run_all_in_parallel:
+<<<<<<< HEAD
 	make -j test_iphone6_8.0_real_device test_iphone6_8.4_simulator
 
 test_iphone6_8.0_real_device:
