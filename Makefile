@@ -2,7 +2,6 @@ JUNIT_DIR?=junit_reports
 FEATURES_DIR?=features
 
 run_all_in_parallel:
-<<<<<<< HEAD
 	make -j test_iphone6_8.0_real_device test_iphone6_8.4_simulator
 
 test_iphone6_8.0_real_device:
@@ -13,6 +12,12 @@ test_iphone6_8.0_real_device:
 
 test_iphone6_8.4_simulator:
 	deviceName='iPhone 6' platformVersion='8.4' platformName=iOS \
+		app='https://s3.amazonaws.com/appium/TestApp8.4.app.zip' \
+		JUNIT_DIR=junit_reports/test_iphone6_8.4_simulator \
+		make parallel_cucumber
+
+test_iphone5_8.4_simulator:
+	deviceName='iPhone 5' platformVersion='8.4' platformName=iOS \
 		app='https://s3.amazonaws.com/appium/TestApp8.4.app.zip' \
 		JUNIT_DIR=junit_reports/test_iphone6_8.4_simulator \
 		make parallel_cucumber
