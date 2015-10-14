@@ -1,5 +1,6 @@
 require 'appium_lib'
 require 'sauce_whisk'
+require 'rspec'
 
 Before do | scenario |
   # need to configure env variables for browser
@@ -8,10 +9,11 @@ Before do | scenario |
       platformVersion: "#{ENV['platformVersion']}",
       deviceName: "#{ENV['deviceName']}",
       platformName: "#{ENV['platformName']}",
+      app: "#{ENV['app']}",
       deviceOrientation: 'portrait',
-      app: 'sauce-storage:TestApp-iphoneos.app.zip',
       name: "#{scenario.feature.name} - #{scenario.name}",
-      appiumVersion: '1.4.11'
+      appiumVersion: '1.4.11',
+      browserName: ''
     }
   }
 
@@ -21,10 +23,12 @@ end
 
 # "after all"
 After do | scenario |
-  @driver.driver_quit
-
   sessionid =  @driver.session_id
+  jobname = "#{scenario.feature.name} - #{scenario.name}"
+  puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
 
+  @driver.driver_quit
+  
   if scenario.passed?
     SauceWhisk::Jobs.pass_job sessionid
   else
